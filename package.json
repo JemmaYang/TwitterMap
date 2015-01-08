@@ -1,8 +1,15 @@
 {
-    "scripts" : {
-      "start": "beefy client.js --open"
-    },
-    "browser": {
-      "d3" : "./d3.min.js"
-    }
+  "scripts": {
+    "start": "beefy client.js --open"
+  },
+  "browser": {
+    "d3": "./d3.min.js"
+  },
+  "dependencies": {
+    "socket.io-client": "~1.2.1",
+    "socket.io": "~1.2.1",
+    "twit": "~1.1.19",
+    "beefy": "~2.1.1",
+    "browserify": "~8.0.3"
+  }
 }
