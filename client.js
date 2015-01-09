@@ -67,6 +67,7 @@ function addTweet(coords) {
             }
 
             g.select("#" + country.id).select("title").text(country.id + " " +countryCount[country.id]);
+            return;
           }
       });
     });
