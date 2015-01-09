@@ -26,6 +26,7 @@ function setup(width,height){
   svg = d3.select("body").append("svg")
       .attr("width", width)
       .attr("height", height)
+      .style("background", "blue")
 
   g = svg.append("g");
 
@@ -45,7 +46,6 @@ function draw(topo) {
       .attr("id", function(d,i) { return d.id; })
       .style("stroke", "black")
       .style("fill", "white");
-
 }
 
 var socket = io.connect();
@@ -59,8 +59,7 @@ socket.on("tweet", function(data) {
 
   g.insert("circle")
   .attr("class", "tweet")
-  .attr("r",5)
+  .attr("r", 3)
   .attr("transform", function(d) {return "translate(" + projection([long, lat]) + ")";})
-  .style("fill", "blue");
-
+  .style("fill", "red");
 });
