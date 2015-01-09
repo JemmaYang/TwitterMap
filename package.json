@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "beefy client.js --open"
+    "start": "node stream.js"
+    "startclient": "beefy client.js --open"
   },
   "browser": {
     "d3": "./d3.min.js"

@@ -3,7 +3,7 @@ var level = require("level");
 var Twit = require('twit');
 var bacon = require("baconjs");
 
-var db = level('./tweets.ldb');
+// var db = level('./tweets.ldb');
 
 
 function saveTweet(tweet) {
@@ -23,18 +23,18 @@ var T = new Twit({
 
 var stream = T.stream('statuses/sample');
 
-io.on('connection', function(socket) {
-  bacon.fromEventTarget(db.createValueStream(), "data")
-  .bufferingThrottle(100)
-  .onValue(function(tweet) {
-      tweet = JSON.parse(tweet);
-      io.to(socket.id).emit("tweet", mapTweet(tweet));
-  });
-});
+// io.on('connection', function(socket) {
+//   bacon.fromEventTarget(db.createValueStream(), "data")
+//   .bufferingThrottle(100)
+//   .onValue(function(tweet) {
+//       tweet = JSON.parse(tweet);
+//       io.to(socket.id).emit("tweet", mapTweet(tweet));
+//   });
+// });
 
 //listen stream data
 stream.on('tweet', function(tweet) {
   if(!tweet.coordinates) { return; }
-  saveTweet(tweet);
+  // saveTweet(tweet);
   io.emit("tweet", mapTweet(tweet));
 });
