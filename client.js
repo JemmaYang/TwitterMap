@@ -59,7 +59,8 @@ socket.on("tweet", function(data) {
 
   g.insert("circle")
   .attr("class", "tweet")
-  .attr("r", 3)
+  .attr("r", 10)
   .attr("transform", function(d) {return "translate(" + projection([long, lat]) + ")";})
-  .style("fill", "red");
+  .style("fill", "red")
+  .transition().duration(2000).attr("r", 3);
 });
