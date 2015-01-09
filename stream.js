@@ -1,4 +1,4 @@
-var io = require('socket.io')(9000);
+var io = require('socket.io')(process.env.PORT || 9000);
 var level = require("level");
 var Twit = require('twit');
 var bacon = require("baconjs");
