@@ -1,4 +1,4 @@
-var io = require("socket.io-client")("http://localhost:9000");
+var io = require("socket.io-client")("http://localhost:9000"); //"http://mapoftweets.herokuapp.com:80");
 var d3 = require("d3");
 
 var width = 960,
