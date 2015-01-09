@@ -63,7 +63,7 @@ socket.on("tweet", function(data) {
   .attr("r", 10)
   .attr("transform", function(d) {return "translate(" + projection([long, lat]) + ")";})
   .style("fill", "red")
-  .transition().duration(2000).attr("r", 3);
+  .transition().duration(100).attr("r", 3);
 });
 
 },{"d3":2,"socket.io-client":3}],2:[function(require,module,exports){
